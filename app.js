@@ -16,6 +16,7 @@ import CategoryRouter from "./routes/category.router.js";
 import SubCategoryRouter from "./routes/subcategory.router.js";
 import ProductRouter from "./routes/product.router.js";
 import BidRouter from "./routes/bid.router.js";
+import Gateway from "./controller/gateway.controller.js";
 
 app.use(cors());
 
@@ -31,6 +32,7 @@ app.use("/category", CategoryRouter);
 app.use("/subcategory", SubCategoryRouter);
 app.use("/product", ProductRouter);
 app.use("/bid", BidRouter);
+app.post("/payment", Gateway);
 
 app.listen(PORT);
 console.log(`Server invoked at Port no ${PORT}`);
